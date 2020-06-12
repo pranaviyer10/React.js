@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel = "stylesheet"
+            type = "text/css"
+            href = "style.css" />
+
+            <title>React.js</title>
+    </head>
+
+    <body>
+        <div class = "react">
+            <div class = "heading">
+                <h1><u>React.js</u></h1>
+            </div>
+
+                <div class = "sub-heading">
+                    <p><h3><strong>Embedding Expressions in JSX</strong></h3></p>
+
+                    <div class = "p">
+                        In the example below, we declare a variable called name and then use it inside JSX by wrapping it in curly braces. <br>
+                    </div>
+                </div>
+
+                <div class = "eg">
+                    <p> const name = 'Name'; <br>
+                        const element = Hello, {name}; <br><br>
+
+                        ReactDOM.render( <br>
+                        element, <br>
+                        document.getElementById('root') <br>
+                        );
+                    </p>
+                </div>
+
+            <div class = "p">
+                <p>
+                    You can put any valid JavaScript expression inside the curly braces in JSX. For example, 2 + 2, user.firstName, or formatName(user) are all valid JavaScript expressions. <br>
+                In the example below, we embed the result of calling a JavaScript function, formatName(user), into an h1 element.
+                </p>
+
+                <div class = "eg">
+                    <p>
+                        function formatName(user) { <br>
+                            return user.firstName + ' ' + user.lastName; <br>
+                        } <br>
+                      
+                        const user = { <br>
+                            firstName: 'Name', <br>
+                            lastName: 'Surname' <br>
+                        }; <br>
+                      
+                        const element = ( <br>
+                            h1> <br>
+                            Hello, {formatName(user)}! <br>
+                        /h1> <br>
+                        ); <br>
+                      
+                        ReactDOM.render( <br>
+                            element, <br>
+                            document.getElementById('root') <br>
+                        );
+                    </p>
+                </div>
+
+            <div class = "p">
+                <p>
+                    We split JSX over multiple lines for readability. While it is not required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of automatic semicolon insertion.
+                </p>
+            </div>
+
+            <div class = "sub-heading">
+                JSX is an Expression Too
+            </div>
+
+            <div class = "p">
+                After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects. <br>
+                This means that you can use JSX inside of if statements and for loops, assign it to variables, accept it as arguments, and return it from functions:
+
+                <div class = "eg">
+                    function getGreeting(user) { <br>
+                        if (user) { <br>
+                          return h1>Hello, {formatName(user)}! /div> h1>; <br>
+                        } <br>
+                        return h1>Hello, Stranger. /h1>; <br>
+                      }
+                </div>
+
+            </div>
+            
+        </div>
+
+    </body>
+</html>
